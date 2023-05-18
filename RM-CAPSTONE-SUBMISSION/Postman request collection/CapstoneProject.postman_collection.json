@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "65e6225c-1542-466e-bebc-3d8a7654ed2b",
+		"name": "CapstoneProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "UserAuthAPI's",
+			"item": [
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTc0NTUzNSwiaWF0IjoxNjgxNzA5NTM1fQ.Z2d7uquZTdqLlLUo00L0sV_-_Re0k8pzZzJJuvEyWgfSXmHpDKEiZsaXTudnCGDF20INtswOJyzFdXD6ads7HA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"zenobia\",\r\n    \"password\": \"qwer\",\r\n    \"email\": \"rmgetty@gmail.com\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/v1/addUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"v1",
+								"addUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TeamServiceAPI",
+			"item": [
+				{
+					"name": "Team",
+					"item": [
+						{
+							"name": "addTeam",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "97a88c6d-3268-4be5-909f-bc401fd1907f",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fieldName\": \"MOA Arena\",\r\n    \"fieldAddress\": \"MOA Arena Philippines\",\r\n    \"fieldCapacity\": 50\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/team/v1/addTeam",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"team",
+										"v1",
+										"addTeam"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getTeam",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "updateTeam",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"teamName\": \"team A\",\r\n    \"active\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/team/v1/updateTeam",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"team",
+										"v1",
+										"updateTeam"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteTeam",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Player",
+					"item": [
+						{
+							"name": "addPlayer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4NDE2NjI4MiwiaWF0IjoxNjg0MTMwMjgyfQ.49faXSkDX-l6aKTLy_Ad2e-62QobQdfu_-FxSN4n1NYhLEvqsM03lCRFVbFfvso24lT8nMBcyuqZecDxvGzLSw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"john\",\r\n    \"lastName\": \"doe\",\r\n    \"country\": \"Philippines\",\r\n    \"active\": true,\r\n    \"teamId\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/player/v1/addPlayer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"player",
+										"v1",
+										"addPlayer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getPlayers",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "updatePlayer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"PlayerFN1\",\r\n    \"lastName\": \"PlayerLn1\",\r\n    \"country\": \"Philippines\",\r\n    \"active\": true,\r\n     \"teamId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/team/v1/updatePlayer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"team",
+										"v1",
+										"updatePlayer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePlayer",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TicketServiceAPI",
+			"item": [
+				{
+					"name": "Field",
+					"item": [
+						{
+							"name": "getField",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "addFIeld",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "updateField",
+							"request": {
+								"method": "PUT",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "getFieldById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/field/v1/getFieldById?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"field",
+										"v1",
+										"getFieldById"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tournament",
+					"item": [
+						{
+							"name": "addTournament",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "getTournament",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "updateTournament",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"tournamentName\": \"The International DOTA 2 Championship\",\r\n    \"sportsCategory\": \"E Sports\",\r\n    \"tournamentStyle\": \"Elimination style\",\r\n    \"active\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/tournament/v1/updateTournament",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"tournament",
+										"v1",
+										"updateTournament"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Match",
+					"item": [
+						{
+							"name": "addMatch",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fieldId\": 1,\r\n    \"tournamentId\": 1,\r\n    \"dateTime\": \"28/05/2023\",\r\n    \"teamsAId\": \"1\",\r\n    \"teamsBId\": \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/match/v1/addMatch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"match",
+										"v1",
+										"addMatch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getMatch",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "updateMatch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"fieldId\": 1,\r\n    \"tournamentId\": 1,\r\n    \"dateTime\": \"28/05/2023\",\r\n    \"teamsAId\": \"1\",\r\n    \"teamsBId\": \"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/match/v1/updateMatch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"match",
+										"v1",
+										"updateMatch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_match",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tickets",
+					"item": [
+						{
+							"name": "addTicket",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "getTicket",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

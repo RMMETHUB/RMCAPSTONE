@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: ms2_api-gateway_v1
+
+  cloud:
+    gateway:
+      routes:
+        - id : ms3-authentication-service-v1
+          uri: lb://MS3-AUTHENTICATION-SERVICE-v1
+          predicates:
+            -  Path=/user/**
+
+        - id : MS4-PLAYER-SERVICE-V1
+          uri: lb://MS4-PLAYER-SERVICE-V1
+          predicates:
+            -  Path=/player/v1/**
+          filters:
+            - RequestFilter
+
+        - id : MS5-TEAM-SERVICE-V1
+          uri: lb://MS5-TEAM-SERVICE-V1
+          predicates:
+            -  Path=/team/v1/**
+          filters:
+            - RequestFilter
+
+        - id : MS6-TOURNAMENT-SERVICE-V1
+          uri: lb://MS6-TOURNAMENT-SERVICE-V1
+          predicates:
+            -  Path=/tournament/v1/**
+          filters:
+            - RequestFilter
+
+        - id : MS7-MATCH-SERVICE-V1
+          uri: lb://MS7-MATCH-SERVICE-V1
+          predicates:
+            -  Path=/match/v1/**
+          filters:
+            - RequestFilter
+
+        - id : MS8-FIELD-SERVICE-V1
+          uri: lb://MS8-FIELD-SERVICE-V1
+          predicates:
+            -  Path=/field/v1/**
+          filters:
+            - RequestFilter
+
+        - id : MS9-TICKET-SERVICE-V1
+          uri: lb://MS9-TICKET-SERVICE-V1
+          predicates:
+            -  Path=/ticket/v1/**
+          filters:
+            - RequestFilter
+
+
+
